@@ -13,11 +13,6 @@ forme::forme(point _o){
 //Accesseur
 point forme::get_point() {return o;}
 
-//Surcharge += avec des coordonnees
-//void forme::operator+=(float x, float y){
-//	o.translate(x,y);
-//}
-
 //Surcharge += avec un point
 void forme::operator+=(point const &p){
 	o.translate(p);

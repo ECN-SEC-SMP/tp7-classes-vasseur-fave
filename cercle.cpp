@@ -2,14 +2,11 @@
 #define pi 3.14
 
 //Constructeurs
-cercle::cercle(){
-	forme a;
-  this->f = a;
+cercle::cercle() : forme(){ 
 	this->rayon = 1;
 }
 
-cercle::cercle(forme _a, float _r){
-  this->f = _a;
+cercle::cercle(point _p, float _r) : forme(_p){
 	this->rayon = _r;
 }
 
@@ -25,12 +22,11 @@ float cercle::surface()
 }
 
 //Accesseurs
-point cercle::get_forme() {return f.get_point();}
 float cercle::get_rayon() {return rayon;}
 
 //Surcharge cout
 ostream& operator<<(ostream &s, cercle &c){
-	point r = c.get_forme();
+	point r = c.get_point();
   s << r << ", r = " << c.get_rayon() << ", P = " << c.perimetre() << ", S = " << c.surface();
 	return s;
 }

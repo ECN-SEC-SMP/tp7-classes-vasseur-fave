@@ -1,27 +1,30 @@
 #ifndef RECTANGLE_HPP
 #define RECTANGLE_HPP
 
-#include "cercle.hpp"
+#include "forme.hpp"
 
-class rectangle{
+class rectangle : public forme {
   private:
-  float x,y;
+  	float L,l;
+
   public:
-  
-  //Constructeur
-  rectangle();
+  	//Constructeur
+  	rectangle();
+  	rectangle(point _p, float _L, float _l);
 
-	//Methodes
-  float perimetre();
-	float surface();
+		//Methodes
+  	float perimetre();
+		float surface();
 
-	//Accesseurs
-	point get_point();
+		//Accesseurs
+		float get_l();
+  	float get_L();
 
-  //Surchage 
-
-  //Destructeur 
-  ~rectangle();
+  	//Destructeur 
+  	~rectangle();
 };
+
+//Surcharge
+ostream& operator<<(ostream &s, rectangle &r);
 
 #endif // RECTANGLE_HPP

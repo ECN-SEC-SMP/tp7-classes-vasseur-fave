@@ -2,6 +2,7 @@
 #include "forme.hpp"
 #include "cercle.hpp"
 #include "rectangle.hpp"
+#include "carre.hpp"
 
 void test_creerPoint()
 {
@@ -75,10 +76,8 @@ void test_Cercle()
 {
   std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
   point p(10,10);
-  forme f(p);
-  cercle c(f,1);
-	point r = c.get_forme();
-  cout << r << " et " << c.get_rayon() << endl;
+  cercle c(p,1);
+  cout << c.get_rayon() << endl;
 	cout << " s = " << c.perimetre() << endl;
   cout << " s = " << c.surface() << endl;
 }
@@ -87,9 +86,24 @@ void test_CercleSurchargeCout()
 {
   std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
   point p(10,10);
-  forme f(p);
-  cercle c(f,1);
+  cercle c(p,3);
 	cout << c << endl;
+}
+
+void test_Rectangle()
+{
+  std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
+  point p;
+  rectangle r(p,5,4);
+  cout << r << endl;
+}
+
+void test_Carre()
+{
+  std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
+  point p;
+  carre c(p,4);
+  cout << c << endl;
 }
 
 int main() {
@@ -119,5 +133,11 @@ int main() {
   std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
 
 	test_CercleSurchargeCout();
-	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';*/
+	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+
+  test_Rectangle();
+  std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';*/
+
+  test_Carre();
+  std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
 }

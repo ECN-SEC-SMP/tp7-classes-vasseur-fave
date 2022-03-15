@@ -5,22 +5,20 @@
 
 #include "forme.hpp"
 
-class cercle{
+class cercle : public forme {
 	private :
-		forme f;
 		float rayon;
 
 	public : 
 		//Constructeurs
 		cercle();
-		cercle(forme _a, float _r);
+		cercle(point _p, float _r);
 
 		//Methodes
     float perimetre();
 		float surface();
 
 		//Accesseurs
-		point get_forme();
 		float get_rayon();
 
 		//Destructeur

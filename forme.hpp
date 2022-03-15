@@ -13,8 +13,8 @@ class forme{
 		forme(point _o);
 
 		//Methodes
-		float perimetre();
-		float surface();
+		float perimetre() const;
+		float surface() const;
 
 		//Accesseurs
 		point get_point();

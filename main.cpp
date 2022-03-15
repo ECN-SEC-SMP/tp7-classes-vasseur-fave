@@ -1,4 +1,7 @@
 #include "point.hpp"
+#include "forme.hpp"
+#include "cercle.hpp"
+#include "rectangle.hpp"
 
 void test_creerPoint()
 {
@@ -36,6 +39,59 @@ void test_SurchargeCout()
 	cout << p1 << endl;
 }
 
+void test_FormeAbstraite()
+{
+	std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
+	point p1(10,15);
+	forme f1;
+	forme f2(p1);
+	point r1 = f1.get_point();
+	point r2 = f2.get_point();
+	cout << r1 << endl;
+	cout << r2 << endl;
+}
+
+void test_FormeTranslate()
+{
+	std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';	
+  point p(10,15);
+  forme f;
+  point r1 = f.get_point();
+  f += p;
+  point r2 = f.get_point();
+  cout << r1 << endl;
+	cout << r2 << endl;
+}
+
+void test_FormeSurchargeCout()
+{
+	std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
+	point p(10,15);
+	forme f(p);
+	cout << f << endl;
+}
+
+void test_Cercle()
+{
+  std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
+  point p(10,10);
+  forme f(p);
+  cercle c(f,1);
+	point r = c.get_forme();
+  cout << r << " et " << c.get_rayon() << endl;
+	cout << " s = " << c.perimetre() << endl;
+  cout << " s = " << c.surface() << endl;
+}
+
+void test_CercleSurchargeCout()
+{
+  std::cout << " ~~~~~~" << __func__ << "~~~~~~" << '\n';
+  point p(10,10);
+  forme f(p);
+  cercle c(f,1);
+	cout << c << endl;
+}
+
 int main() {
 	/*test_creerPoint();
   std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
@@ -47,5 +103,21 @@ int main() {
 	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
 	
 	test_SurchargeCout();
+	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+
+  // Partie 3 
+  test_FormeAbstraite();
+	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+
+  test_FormeTranslate();
+  std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+
+	test_FormeSurchargeCout();
+  std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+
+  test_Cercle();
+  std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+
+	test_CercleSurchargeCout();
 	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';*/
 }

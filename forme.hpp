@@ -3,7 +3,7 @@
 
 #include "point.hpp"
 
-class Forme{
+class forme{
   private :
 		point o;
 
@@ -12,12 +12,42 @@ class Forme{
   	forme();
 		forme(point _o);
 
+		//Methodes
+		float perimetre();
+		float surface();
+
 		//Accesseurs
+		point get_point();
 
-		//Mutateurs
-
+    //Surchage 
+		void operator+=(point const &p);
+  
   	//Destructeur 
   	~forme();
 };
+
+//Surcharge Cout
+ostream& operator<<(ostream &s, forme &f);
+
+/*
+class carre{
+  private:
+  float c;
+  public:
+  
+  //Constructeur
+
+
+	//Methodes
+
+
+	//Accesseurs
+
+  //Surchage 
+
+  //Destructeur 
+  ~carre();
+};*/
+
 
 #endif //FORME_HPP

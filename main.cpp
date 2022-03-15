@@ -37,7 +37,7 @@ void test_SurchargeCout()
 }
 
 int main() {
-	test_creerPoint();
+	/*test_creerPoint();
   std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
 
 	test_TranslateWithParameters();
@@ -47,5 +47,5 @@ int main() {
 	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
 	
 	test_SurchargeCout();
-	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';
+	std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << '\n';*/
 }
